@@ -5,11 +5,25 @@ WORKDIR /root
 
 # Sort out timezone information.
 ENV TZ=Europe/London
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 	
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-# Install some extra packages.
+# Install extra packages.
 RUN apt-get update && \
-    apt-get install -y tmux zsh unzip vim-nox less git wget gcc g++ gdb make python3 nodejs
+    apt-get install -y tmux \
+                       zsh \
+                       unzip \
+                       vim-nox \
+                       less \
+                       git \
+                       wget \
+                       gcc \
+                       g++ \
+                       gdb \
+                       make \
+                       python3 \
+                       nodejs \
+                       valgrind \
+                       silversearcher-ag
 
 # Set up development environment. Install dotfiles.
 RUN git clone -b master https://github.com/ryanc414/dotfiles.git .dotfiles && .dotfiles/install
