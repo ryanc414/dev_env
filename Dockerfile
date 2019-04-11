@@ -20,5 +20,5 @@ RUN cd testplan && \
 
 
 # Install additional packages. Testplan requires rsync for some functinality.
-RUN apt-get update && apt-get install rsync
+RUN apt-get update && apt-get install -y rsync
 
