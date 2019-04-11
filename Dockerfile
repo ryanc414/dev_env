@@ -20,8 +20,14 @@ RUN apt-get update && \
                        g++ \
                        gdb \
                        make \
+                       python \
+                       python-pip \
+                       python-dev \
                        python3 \
+                       python3-pip \
+                       python3-dev \
                        nodejs \
+                       npm \
                        valgrind \
                        silversearcher-ag
 
