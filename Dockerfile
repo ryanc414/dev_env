@@ -29,7 +29,8 @@ RUN apt-get update && \
                        nodejs \
                        npm \
                        valgrind \
-                       silversearcher-ag
+                       silversearcher-ag \
+                       curl
 
 # Set up development environment. Install dotfiles.
 RUN git clone -b master https://github.com/ryanc414/dotfiles.git .dotfiles && .dotfiles/install
