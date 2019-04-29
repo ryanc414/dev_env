@@ -9,9 +9,7 @@ RUN git clone https://github.com/Morgan-Stanley/testplan.git
 # since testplan is designed to be compatible with both versions.
 RUN cd testplan && \
     pip3 install -r requirements.txt && \
-    python3 setup.py develop && \
     pip2 install -r requirements.txt && \
-    python2 setup.py develop && \
     ./install-testplan-ui --verbose --dev
 
 # Install additional packages. Testplan requires rsync for some functionality.
