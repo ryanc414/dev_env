@@ -24,7 +24,7 @@ RUN apt-get update && \
                        python-pip \
                        python-dev \
                        python3.7 \
-                       python3.7-pip \
+                       python3-pip \
                        python3.7-dev \
                        nodejs \
                        npm \
