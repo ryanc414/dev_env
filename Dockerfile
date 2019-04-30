@@ -33,7 +33,7 @@ RUN apt-get update && \
                        curl
 
 # Set up development environment. Install dotfiles.
-RUN git clone -b master https://github.com/ryanc414/dotfiles.git .dotfiles && .dotfiles/install
+RUN git clone -b personal https://github.com/ryanc414/dotfiles.git .dotfiles && .dotfiles/install
 
 # Install exa
 RUN wget https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip && \
