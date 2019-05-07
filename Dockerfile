@@ -16,8 +16,8 @@ RUN git clone https://github.com/ryan-collingham/testplan.git && \
 # We install the python dependencies for both python2 and 3 interpreters,
 # since testplan is designed to be compatible with both versions.
 RUN cd testplan && \
-    pip3 install -r requirements.txt && \
-    pip2 install -r requirements.txt && \
+    python3.7 -m pip install -r requirements.txt && \
+    python2 -m pip install -r requirements.txt && \
     ./install-testplan-ui --verbose --dev
 
 # Install additional packages. Testplan requires rsync for some functionality.
