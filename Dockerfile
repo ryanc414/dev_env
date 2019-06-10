@@ -26,11 +26,13 @@ RUN apt-get update && \
                        python3.7 \
                        python3-pip \
                        python3.7-dev \
-                       nodejs \
-                       npm \
                        valgrind \
                        silversearcher-ag \
                        curl
+
+# Install latest version of nodejs
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install nodejs
 
 # Set up development environment. Install dotfiles.
 RUN git clone -b master https://github.com/ryanc414/dotfiles.git .dotfiles && .dotfiles/install
