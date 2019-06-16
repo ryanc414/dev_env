@@ -28,7 +28,14 @@ RUN apt-get update && \
                        python3.7-dev \
                        valgrind \
                        silversearcher-ag \
-                       curl
+                       curl \
+                       python3.7-venv
+
+# Set up python virtual environments
+RUN mkdir ~/.venv && \
+    python3.7 -m venv ~/.venv/py37 && \
+    python2 -m pip install virtualenv && \
+    python2 -m virtualenv ~/.venv/py2
 
 # Install latest version of nodejs
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
