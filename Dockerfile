@@ -8,11 +8,13 @@ RUN git clone https://github.com/Morgan-Stanley/testplan.git
 # We install the python dependencies for both python2 and 3 interpreters,
 # since testplan is designed to be compatible with both versions.
 RUN cd testplan && \
-    source ~/.venv/py2/bin/activate && \
-    pip install -r requirements.txt && \
+    . ~/.venv/py2/bin/activate && \
+    pip install --no-cache-dir wheel && \
+    pip install --no-cache-dir -r requirements.txt && \
     deactivate && \
-    source ~/.venv/py37/bin/activate && \
-    pip install -r requirements.txt && \
+    . ~/.venv/py37/bin/activate && \
+    pip install --no-cache-dir wheel && \
+    pip install --no-cache-dir -r requirements.txt && \
     ./install-testplan-ui --verbose --dev && \
     deactivate
 
