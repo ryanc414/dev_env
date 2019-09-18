@@ -37,7 +37,12 @@ RUN apt-get update && \
                        valgrind \
                        silversearcher-ag \
                        curl \
-                       python3.7-venv
+                       python3.7-venv \
+                       software-properties-common
+
+# Install latest Go
+RUN add-apt-repository ppa:longsleep/golang-backports && \
+    apt-get install golang-go
 
 # Set up python virtual environments
 RUN mkdir ~/.venv && \
