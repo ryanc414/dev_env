@@ -42,7 +42,7 @@ RUN apt-get update && \
 
 # Install latest Go
 RUN add-apt-repository ppa:longsleep/golang-backports && \
-    apt-get install golang-go
+    apt-get install -y golang-go
 
 # Set up python virtual environments
 RUN mkdir ~/.venv && \
