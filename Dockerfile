@@ -72,7 +72,7 @@ RUN wget https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_am
 RUN git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 # Install vim plugins
-RUN vim +BundleInstall +qall
+RUN vim +BundleInstall +GoInstallBinaries +qall
 
 # Source the zshrc to install antigen plugins.
 RUN zsh -c "source ~/.zshrc"
